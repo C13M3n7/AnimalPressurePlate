@@ -69,10 +69,13 @@ deactivate
 4. Install dependencies
 5. Configure GPIO pins
 6. Set up Google Drive API credentials by running:
-7. Adjust email settings
-8. Calibrate detection sensitivity
-9. Run scripts
-10. Deactivate when done
+```bash
+# generate token
+python google_upload.py
+8. Adjust email settings by setting up 
+9. Calibrate detection sensitivity
+10. Run scripts
+11. Deactivate when done
 
 ## Development Tips
 - Always activate venv before working
