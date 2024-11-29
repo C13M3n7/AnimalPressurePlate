@@ -68,7 +68,7 @@ deactivate
 3. Activate environment
 4. Install dependencies
 5. Configure GPIO pins
-6. Set up Google Drive API credentials
+6. Set up Google Drive API credentials by running:
 7. Adjust email settings
 8. Calibrate detection sensitivity
 9. Run scripts
