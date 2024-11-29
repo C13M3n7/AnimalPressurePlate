@@ -1,7 +1,14 @@
 # Animal Pressure Plate Detection System
 
-## Project Setup
-
+## Hardware & software Requirements
+- Raspberry Pi
+- Camera module
+- Temperature/humidity sensor (DHT11/DHT22)
+- Pressure sensor or GPIO button
+- Internet connectivity
+- Python 3.7+
+- Virtual environment support
+- 
 ### Create Project Directory and Virtual Environment
 ```bash
 # Create and navigate to project folder
@@ -12,7 +19,7 @@ cd animal-detection-project
 virtualenv env
 
 # Activate virtual environment
-source env/bin/activate
+source /path/to/your/env/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip
@@ -43,32 +50,13 @@ sudo apt install python3-oauth2client
 sudo apt install python3-google-auth-oauthlib
 ```
 
-### Deactivate Virtual Environment
-```bash
-# When finished working
-deactivate
-```
-## Hardware & software Requirements
-- Raspberry Pi
-- Camera module
-- Temperature/humidity sensor (DHT11/DHT22)
-- Pressure sensor or GPIO button
-- Internet connectivity
-- Python 3.7+
-- Virtual environment support
-
-## Workflow
-1. Create project directory
-2. Create virtual environment
-3. Activate environment
-4. Install dependencies
-5. Configure GPIO pins
-6. Set up Google Drive API credentials by running:
+## Email and Database connection Setup
+Set up Google Drive API credentials by running:
 ```bash
 # generate token
 python google_upload.py
 ```
-8. Adjust email settings by setting up Google cloud:
+Adjust email settings by setting up Google cloud:
 - open google cloud console
 - create a new project
 - enable google drive API
@@ -92,10 +80,10 @@ if not creds or not creds.valid:
 ```
 - place the credentials.json in the same directory as your code
 - run the code you it will bring u to a google login page in raspberry pi
-- login there with the gmail u used in google cloud console
+- login with the gmail you used in google cloud console
 - after login, it will ask to grant permissions, grant it
-- then after u run it the first time you shud see a file called token.pickle created in the same directory as your code and the crendentials.json
-- you can now logout of your google account in raspberry pi cuz the token.pickle saves your credentials for future use
+- after u run it the first time you should see a file called token.pickle created in the same directory as your code and the crendentials.json
+- you can now logout of your google account in raspberry pi as the token.pickle saves your credentials for future use
 
 10. Calibrate detection sensitivity
 11. Run scripts
@@ -109,42 +97,26 @@ if not creds or not creds.valid:
 - Ensure correct Python version
 - Check venv activation
 - Verify library compatibility
+- Rerun the google_uploads.py as the token might have expired
 
 ## System Overview
 Automated wildlife monitoring system using Raspberry Pi for detection, imaging, and data logging.
 
-## Configuration Steps
-1. Install dependencies
-2. Configure GPIO pins
-3. Set up Google Drive API credentials
-4. Adjust email settings
-5. Calibrate detection sensitivity
 
-## Key Features
-- Automated wildlife detection
-- Image capture
-- Environmental logging
-- Cloud storage integration
-- Email notifications
-
-## Usage
+## Main Usage
 ```bash
-# Run main detection script
+# Run main detection script in virtual environment
 python3 cambutton.py
+
+# place this code into rc.local directory to run the code on startup
+sudo nano /etc/rc.local
+
+# Add the following line before the exit 0 line
+source /path/to/your/env/bin/activate
+/path/to/cambutton.sh &
 ```
 
 ## Security Considerations
 - Protect sensitive credentials
 - Use environment variables
 - Implement secure file permissions
-
-## Troubleshooting
-- Verify sensor connections
-- Check camera access
-- Validate API permissions
-
-## Potential Improvements
-- Add machine learning model retraining
-- Implement more robust error handling
-- Create configuration file
-- Add logging mechanisms
