@@ -26,12 +26,12 @@ num_threads = 4
 enable_edgetpu = False
 
 # Email settings
-sender_email = "clementchangcheng@gmail.com"
-receiver_email = "clementchangcheng@gmail.com"
-email_password = "hyziewdloefmazjx"
+sender_email = "youremail.com"
+receiver_email = "youremail.com"
+email_password = "your app password for youremail.com"
 
 # Google Drive sharing settings
-drive_share_email = "paingchan211@gmail.com"  # Replace with the email to share the file with
+drive_share_email = "aiholderemail.com"  # Replace with the email to share the file with
 
 # DHT sensor setup
 DHT_SENSOR_PIN = board.D4  # Use the correct GPIO pin
