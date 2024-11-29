@@ -19,8 +19,8 @@
 ### Installation
 ```bash
 sudo pip3 install RPi.GPIO pillow adafruit_dht
-Copy
-2. `detectHUMAN.py` Libraries:
+
+
 ```markdown
 ## Required Libraries
 
@@ -36,8 +36,8 @@ Copy
 ### Installation
 ```bash
 sudo pip3 install tflite-support opencv-python-headless
-Copy
-3. `google_upload.py` Libraries:
+
+
 ```markdown
 ## Required Libraries
 
@@ -53,7 +53,7 @@ Copy
 ### Installation
 ```bash
 sudo pip3 install google-api-python-client google-auth-httplib2 google-auth-oauthlib
-Copy
+
 4. `utils.py` Libraries:
 ```markdown
 ## Required Libraries
