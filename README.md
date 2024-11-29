@@ -45,7 +45,7 @@ Legacy Camera Support -- Enable
 
 ### Python downgrade
 ```bash
-restart terminal
+restart terminal or 'cd ..' into main directory
 
 # downgrade python
 sudo apt get install curl
@@ -70,13 +70,19 @@ pyenv update
 pyenv install --list
 pyenv install 3.7.12
 
-# got into your project folder and activate the downgraded python
+# go into your project folder and activate the downgraded python
 cd animal-detection-project
 pyenv local 3.7.12
+
+# deactivating downgraded python
+pyenv local --unset
 ```
 
 ### Install Dependencies
 ```bash
+# activate virtual environment
+source /path/to/your/env/bin/activate
+
 # Install required libraries
 pip install RPi.GPIO
 pip install pillow
@@ -166,7 +172,3 @@ source /path/to/your/env/bin/activate
 /path/to/cambutton.sh &
 ```
 
-## Security Considerations
-- Protect sensitive credentials
-- Use environment variables
-- Implement secure file permissions
