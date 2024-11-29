@@ -32,36 +32,16 @@ Legacy Camera Support -- Enable
 ### Install Dependencies
 ```bash
 # Install required libraries
-pip install \
-    RPi.GPIO pillow adafruit_dht \
-    tflite-support opencv-python-headless \
-    google-api-python-client google-auth-httplib2 numpy
-
+pip install RPi.GPIO
+pip install pillow
+pip install adafruit_dht
+pip install tflite-support
+pip install numpy
+pip install opencv-python
 sudo apt install python3-googleapi
 sudo apt install python3-oauth2client
 sudo apt install python3-google-auth-oauthlib
 ```
-#### Hardware Interaction
-- `RPi.GPIO`: GPIO pin control
-- `board`: Board pin mapping
-- `adafruit_dht`: Temperature/humidity sensor
-
-#### Image Processing
-- `Pillow (PIL)`: Image manipulation
-- `cv2 (OpenCV)`: Computer vision
-- `numpy`: Numerical computing
-
-#### Machine Learning
-- `tflite_support`: TensorFlow Lite object detection
-
-#### System Utilities
-- `smtplib`: Email sending
-- `email`: MIME email composition
-- `os`: File operations
-- `subprocess`: System command execution
-- `time`: Timestamp generation
-- `argparse`: Command-line parsing
-- `pickle`: Object serialization
 
 ### Deactivate Virtual Environment
 ```bash
