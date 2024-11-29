@@ -81,7 +81,21 @@ python google_upload.py
 -find the search bar type credentials
 -make OAUTH 2.0 Client ID
 -download the credentials and then save as credentials.json
--put the code above in raspberry pi 
+-put the code in google_upload.py at:
+```bash
+if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file('Name of generated .json file', SCOPES)
+            creds = flow.run_local_server(port=0)
+        
+        # Save credentials for next run
+        with open('token.pickle', 'wb') as token:
+            pickle.dump(creds, token)
+    
+    return build('drive', 'v3', credentials=creds)
+```
 -place the credentials.json in the same directory as your code
 -run the code you it will bring u to a google login page in raspberry pi
 -login there with the gmail u used in google cloud console
