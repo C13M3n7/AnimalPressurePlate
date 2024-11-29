@@ -6,7 +6,7 @@
 - Temperature/humidity sensor (DHT11/DHT22)
 - Pressure sensor or GPIO button
 - Internet connectivity
-- Python 3.7+
+- Python 3.7.3
 - Virtual environment
 
 ### Initial setup
@@ -68,11 +68,11 @@ pyenv update
 
 # Install python versions
 pyenv install --list
-pyenv install 3.7.12
+pyenv install 3.7.3
 
 # go into your project folder and activate the downgraded python
 cd animal-detection-project
-pyenv local 3.7.12
+pyenv local 3.7.3
 
 # deactivating downgraded python
 pyenv local --unset
