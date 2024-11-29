@@ -9,7 +9,7 @@
 - Python 3.7+
 - Virtual environment
 
-### Create Project Directory and Virtual Environment
+### Initial setup
 ```bash
 #free up space
 cat /etc/os-release
@@ -17,9 +17,6 @@ cat /etc/os-release
 # get updates and upgrade
 sudo apt update
 sudo apt upgrade
-
-#got to this website
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjQ3WWExVEhtV3Bhc1NDZ0J2ZXdPRVAwUS0xQXxBQ3Jtc0trMGFWSGZ2ZjduWC1iWHNMOUUzVFU3ZldQbjc0U0t3WjF4MFdEQjUzZ0puNDFuZFZVeHEtNGthbmRJYzBPYlpVWTNsSXNuQUdjU3RxQTNoLU1nSXV0bm1QQ2JvT05kMWtoVTItMEZZMXJHWnhvNWpmRQ&q=https%3A%2F%2Fgithub.com%2FPINTO0309%2FTensorflow-bin%2Ftree%2Fmain%2Fprevious_versions&v=vekblEk6UPc
 
 # Create and navigate to project folder
 mkdir animal-detection-project
@@ -44,6 +41,38 @@ pip install "picamera[array]"
 sudo raspi-config
 Inferface Options
 Legacy Camera Support -- Enable
+```
+
+### Python downgrade
+```bash
+restart terminal
+
+# downgrade python
+sudo apt get install curl
+curl https://pyenv.run | bash
+sudo nano ~/.bashrc
+
+# Add the following three lines to the botton of the .bashrc file:
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+# Restart the terminal
+exec $SHELL
+
+# Install system packages
+sudo apt-get install --yes libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libgdbm-dev lzma lzma-dev tcl-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev wget make openssl
+
+# Update pyenv
+pyenv update
+
+# Install python versions
+pyenv install --list
+pyenv install 3.7.12
+
+# got into your project folder and activate the downgraded python
+cd animal-detection-project
+pyenv local 3.7.12
 ```
 
 ### Install Dependencies
