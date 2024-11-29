@@ -1,68 +1,88 @@
-# AnimalPressurePlate
+# Animal Pressure Plate Detection System
+
+## System Overview
+Automated wildlife monitoring system using Raspberry Pi for detection, imaging, and data logging.
+
 ## Required Libraries
 
-### GPIO and Hardware Libraries
-- `RPi.GPIO`: GPIO pin control for Raspberry Pi
+### Core Dependencies
+```bash
+# Install dependencies
+sudo pip3 install \
+    RPi.GPIO pillow adafruit_dht \
+    tflite-support opencv-python-headless \
+    google-api-python-client google-auth-httplib2 numpy
+```
+
+### Detailed Library Breakdown
+
+#### Hardware Interaction
+- `RPi.GPIO`: GPIO pin control
 - `board`: Board pin mapping
-- `adafruit_dht`: DHT temperature/humidity sensor library
+- `adafruit_dht`: Temperature/humidity sensor
 
-### Image Processing
-- `Pillow (PIL)`: Image manipulation and text overlay
+#### Image Processing
+- `Pillow (PIL)`: Image manipulation
+- `cv2 (OpenCV)`: Computer vision
+- `numpy`: Numerical computing
 
-### Email and File Handling
+#### Machine Learning
+- `tflite_support`: TensorFlow Lite object detection
+
+#### System Utilities
 - `smtplib`: Email sending
 - `email`: MIME email composition
-- `os`: File and directory operations
-- `subprocess`: Running system commands
+- `os`: File operations
+- `subprocess`: System command execution
 - `time`: Timestamp generation
-
-### Installation
-```bash
-sudo pip3 install RPi.GPIO pillow adafruit_dht
-
-
-```markdown
-## Required Libraries
-
-### Machine Learning and Computer Vision
-- `tflite_support`: TensorFlow Lite object detection
-- `cv2 (OpenCV)`: Image processing and computer vision
-
-### System and Utility
-- `argparse`: Command-line argument parsing
-- `sys`: System-specific parameters and functions
-- `time`: Time-related functions
-
-### Installation
-```bash
-sudo pip3 install tflite-support opencv-python-headless
-
-
-```markdown
-## Required Libraries
-
-### Google Drive API
-- `google-api-python-client`: Google Drive API client
-- `google-auth-oauthlib`: OAuth 2.0 authorization
-- `google-auth`: Authentication transport
-
-### System Utilities
-- `os`: File and directory operations
+- `argparse`: Command-line parsing
 - `pickle`: Object serialization
 
-### Installation
+## Hardware Requirements
+- Raspberry Pi
+- Camera module
+- Temperature/humidity sensor (DHT11/DHT22)
+- Pressure sensor or GPIO button
+- Internet connectivity
+
+## Configuration Steps
+1. Install dependencies
+2. Configure GPIO pins
+3. Set up Google Drive API credentials
+4. Adjust email settings
+5. Calibrate detection sensitivity
+
+## Key Features
+- Automated wildlife detection
+- Image capture
+- Environmental logging
+- Cloud storage integration
+- Email notifications
+
+## Usage
 ```bash
-sudo pip3 install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+# Run main detection script
+python3 animal_detection.py
+```
 
-4. `utils.py` Libraries:
-```markdown
-## Required Libraries
+## Security Considerations
+- Protect sensitive credentials
+- Use environment variables
+- Implement secure file permissions
 
-### Computer Vision
-- `cv2 (OpenCV)`: Image processing
-- `numpy`: Numerical computing
-- `tflite_support`: TensorFlow Lite support for detections
+## Troubleshooting
+- Verify sensor connections
+- Check camera access
+- Validate API permissions
 
-### Installation
-```bash
-sudo pip3 install opencv-python-headless numpy tflite-support
+## Potential Improvements
+- Add machine learning model retraining
+- Implement more robust error handling
+- Create configuration file
+- Add logging mechanisms
+
+## License
+[Specify Appropriate License]
+
+## Contributors
+[List Project Contributors]
