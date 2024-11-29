@@ -74,7 +74,7 @@ deactivate
 python google_upload.py
 ```
 8. Adjust email settings by setting up Google cloud:
-```bash
+
 -open google cloud console
 -create a new project
 -enable google drive API
@@ -102,7 +102,7 @@ if not creds or not creds.valid:
 -after login, it will ask to grant permissions, grant it
 -then after u run it the first time you shud see a file called token.pickle created in the same directory as your code and the crendentials.json
 -you can now logout of your google account in raspberry pi cuz the token.pickle saves your credentials for future use
-```
+
 10. Calibrate detection sensitivity
 11. Run scripts
 12. Deactivate when done
