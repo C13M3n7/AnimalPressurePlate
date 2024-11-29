@@ -72,10 +72,26 @@ deactivate
 ```bash
 # generate token
 python google_upload.py
-8. Adjust email settings by setting up 
-9. Calibrate detection sensitivity
-10. Run scripts
-11. Deactivate when done
+```
+8. Adjust email settings by setting up Google cloud:
+```bash
+-open google cloud console
+-create a new project
+-enable google drive API
+-find the search bar type credentials
+-make OAUTH 2.0 Client ID
+-download the credentials and then save as credentials.json
+-put the code above in raspberry pi 
+-place the credentials.json in the same directory as your code
+-run the code you it will bring u to a google login page in raspberry pi
+-login there with the gmail u used in google cloud console
+-after login, it will ask to grant permissions, grant it
+-then after u run it the first time you shud see a file called token.pickle created in the same directory as your code and the crendentials.json
+-you can now logout of your google account in raspberry pi cuz the token.pickle saves your credentials for future use
+```
+10. Calibrate detection sensitivity
+11. Run scripts
+12. Deactivate when done
 
 ## Development Tips
 - Always activate venv before working
